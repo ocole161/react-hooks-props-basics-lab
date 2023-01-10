@@ -5,14 +5,17 @@ import About from "./About";
 
 // pass this data down as props to the child component(s) that need it!
 import user from "../data/user";
+import { unstable_renderSubtreeIntoContainer } from "react-dom";
 console.log(user);
+
+
 
 function App() {
   return (
     <div>
       <NavBar />
-      <Home />
-      <About />
+      <Home city = {user.city} color = {user.color} name = {user.name}/>
+      <About bio = {user.bio} />
     </div>
   );
 }
